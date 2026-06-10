@@ -20,32 +20,32 @@ async function request(method, path, body = null) {
 
 // ── Auth ──────────────────────────────────────────────────────
 export const auth = {
-  login:    (usuario, contrasena) => request('POST', '/auth/login.php',    { usuario, contrasena }),
-  register: (nombre, contrasena, correo) => request('POST', '/auth/register.php', { nombre, contrasena, correo }),
-  logout:   ()               => request('GET',  '/auth/logout.php'),
+  login:    (usuario, contrasena) => request('POST', '/autenticacion/ingresar.php',    { usuario, contrasena }),
+  register: (nombre, contrasena, correo) => request('POST', '/autenticacion/registrarse.php', { nombre, contrasena, correo }),
+  logout:   ()               => request('GET',  '/autenticacion/salir.php'),
 };
 
 // ── Categorías ────────────────────────────────────────────────
 export const categories = {
-  getAll:  (tipo) => request('GET',    `/categories/index.php?tipo=${tipo}`),
-  create:  (data) => request('POST',   '/categories/index.php', data),
-  update:  (id, data) => request('PUT',    `/categories/index.php?id=${id}`, data),
-  remove:  (id) => request('DELETE',  `/categories/index.php?id=${id}`),
+  getAll:  (tipo) => request('GET',    `/categorias/index.php?tipo=${tipo}`),
+  create:  (data) => request('POST',   '/categorias/index.php', data),
+  update:  (id, data) => request('PUT',    `/categorias/index.php?id=${id}`, data),
+  remove:  (id) => request('DELETE',  `/categorias/index.php?id=${id}`),
 };
 
 // ── Transacciones ─────────────────────────────────────────────
 export const transactions = {
-  getAll: (tipo) => request('GET',    `/transactions/index.php?tipo=${tipo}`),
-  create: (data) => request('POST',   '/transactions/index.php', data),
-  remove: (id)   => request('DELETE', `/transactions/index.php?id=${id}`),
+  getAll: (tipo) => request('GET',    `/transacciones/index.php?tipo=${tipo}`),
+  create: (data) => request('POST',   '/transacciones/index.php', data),
+  remove: (id)   => request('DELETE', `/transacciones/index.php?id=${id}`),
 };
 
 // ── Home (resumen semanal) ────────────────────────────────────
 export const home = {
-  getSummary: () => request('GET', '/home/index.php'),
+  getSummary: () => request('GET', '/inicio/index.php'),
 };
 
 // ── Dashboard ─────────────────────────────────────────────────
 export const dashboard = {
-  getData: () => request('GET', '/dashboard/index.php'),
+  getData: () => request('GET', '/panel/index.php'),
 };

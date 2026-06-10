@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { home } from '../api/api';
+import { home } from '../api/peticiones';
 
 // Formatea números con punto de miles
 function fmt(n) {

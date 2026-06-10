@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/helpers.php';
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../configuracion/ayudantes.php';
+require_once __DIR__ . '/../configuracion/basededatos.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     jsonError('Método no permitido', 405);

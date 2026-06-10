@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import Toast from './Toast';
-import { categories } from '../api/api';
+import Toast from './Notificacion';
+import { categories } from '../api/peticiones';
 
 const MAX_CATS = 8;
 const EMPTY    = Array(MAX_CATS).fill(null);

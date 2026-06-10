@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Toast from './Toast';
-import { categories, transactions } from '../api/api';
+import Toast from './Notificacion';
+import { categories, transactions } from '../api/peticiones';
 
 export default function TransactionForm({ tipo, onBack }) {
   const isGasto = tipo === 'gasto';

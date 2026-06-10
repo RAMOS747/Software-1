@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { auth } from '../api/api';
+import { auth } from '../api/peticiones';
 
 export default function Register({ onBack }) {
   const [nombre,     setNombre]     = useState('');

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Logo  from './Logo';
-import Toast from './Toast';
-import { auth } from '../api/api';
+import Logo  from './Logotipo';
+import Toast from './Notificacion';
+import { auth } from '../api/peticiones';
 
 export default function Login({ onLogin, onGoRegister }) {
   const [usuario,    setUsuario]    = useState('');

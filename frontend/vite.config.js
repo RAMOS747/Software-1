@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      // Redirige /api/* → http://localhost/finances-app/backend/*
+      // Redirige /api/* → http://localhost/aplicacion-finanzas/backend/*
       '/api': {
         target: 'http://localhost',
         changeOrigin: true,

@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import Login           from './components/Login';
-import Register        from './components/Register';
-import Home            from './components/Home';
-import SideMenu        from './components/SideMenu';
-import Categories      from './components/Categories';
-import TransactionForm from './components/TransactionForm';
-import TransactionList from './components/TransactionList';
-import Dashboard       from './components/Dashboard';
-import Logo            from './components/Logo';
-import { auth }        from './api/api';
-import './styles/globals.css';
+import IniciarSesion           from './componentes/IniciarSesion';
+import Registro        from './componentes/Registro';
+import Inicio            from './componentes/Inicio';
+import MenuLateral        from './componentes/MenuLateral';
+import Categorias      from './componentes/Categorias';
+import FormularioTransaccion from './componentes/FormularioTransaccion';
+import ListaTransacciones from './componentes/ListaTransacciones';
+import Panel       from './componentes/Panel';
+import Logotipo            from './componentes/Logotipo';
+import { auth }        from './api/peticiones';
+import './estilos/globals.css';
 
 /*
   Páginas posibles:
@@ -40,10 +40,10 @@ export default function App() {
   // ── Pantallas de autenticación ────────────────────────────────
   if (!user) {
     if (page === 'register') {
-      return <Register onBack={() => setPage('login')} />;
+      return <Registro onBack={() => setPage('login')} />;
     }
     return (
-      <Login
+      <IniciarSesion
         onLogin={handleLogin}
         onGoRegister={() => setPage('register')}
       />
@@ -55,31 +55,31 @@ export default function App() {
   function renderPage() {
     switch (page) {
       case 'home':
-        return <Home onNavigate={setPage} />;
+        return <Inicio onNavigate={setPage} />;
 
       case 'categorias-gastos':
-        return <Categories tipo="gasto"   onBack={() => setPage('home')} />;
+        return <Categorias tipo="gasto"   onBack={() => setPage('home')} />;
 
       case 'categorias-ingresos':
-        return <Categories tipo="ingreso" onBack={() => setPage('home')} />;
+        return <Categorias tipo="ingreso" onBack={() => setPage('home')} />;
 
       case 'registro-gastos':
-        return <TransactionForm tipo="gasto"   onBack={() => setPage('home')} />;
+        return <FormularioTransaccion tipo="gasto"   onBack={() => setPage('home')} />;
 
       case 'registro-ingresos':
-        return <TransactionForm tipo="ingreso" onBack={() => setPage('home')} />;
+        return <FormularioTransaccion tipo="ingreso" onBack={() => setPage('home')} />;
 
       case 'lista-gastos':
-        return <TransactionList tipo="gasto"   onBack={() => setPage('home')} />;
+        return <ListaTransacciones tipo="gasto"   onBack={() => setPage('home')} />;
 
       case 'lista-ingresos':
-        return <TransactionList tipo="ingreso" onBack={() => setPage('home')} />;
+        return <ListaTransacciones tipo="ingreso" onBack={() => setPage('home')} />;
 
       case 'dashboard':
-        return <Dashboard onBack={() => setPage('home')} />;
+        return <Panel onBack={() => setPage('home')} />;
 
       default:
-        return <Home onNavigate={setPage} />;
+        return <Inicio onNavigate={setPage} />;
     }
   }
 
@@ -103,7 +103,7 @@ export default function App() {
         </button>
 
         {/* Menú desplegable */}
-        <SideMenu
+        <MenuLateral
           open={menuOpen}
           onClose={() => setMenuOpen(false)}
           onNavigate={setPage}
@@ -116,7 +116,7 @@ export default function App() {
             display:'flex', flexDirection:'column', alignItems:'center',
             opacity:0.6, zIndex:10,
           }}>
-            <Logo size={28} />
+            <Logotipo size={28} />
           </div>
         )}
 

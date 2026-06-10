@@ -4,7 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
   LineChart, Line,
 } from 'recharts';
-import { dashboard } from '../api/api';
+import { dashboard } from '../api/peticiones';
 
 // ── Días de la semana en español (índice 0=Dom … 6=Sáb) ────────
 const DIAS_ES = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];

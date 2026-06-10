@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { transactions } from '../api/api';
-import Toast from './Toast';
+import { transactions } from '../api/peticiones';
+import Toast from './Notificacion';
 
 function fmt(n) {
   return Number(n).toLocaleString('es-CO', { minimumFractionDigits: 3 });

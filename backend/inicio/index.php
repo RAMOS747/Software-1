@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/helpers.php';
-require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../configuracion/ayudantes.php';
+require_once __DIR__ . '/../configuracion/basededatos.php';
 
 $user = requireSession();
 $pdo  = getDB();
